@@ -192,6 +192,7 @@ nav ul li a:hover {
 
 .about-head {
     text-align: center;
+        margin-top: 65px;
 }
 
 .about-head h1 {
@@ -332,7 +333,7 @@ nav ul li a:hover {
 .contact-head {
     text-align: center;
     color: #e25822;
-    margin-top: 50px;
+    margin-top: 90px;
     margin-bottom: 50px;
 }
 

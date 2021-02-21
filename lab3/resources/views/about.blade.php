@@ -10,6 +10,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
+       <header class="wow zoomIn" id="home">
+        <div class="logo">
+            <h1>DAXAK</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a data-scroll="#home1" onclick="window.location='{{ url('/')}}'">Home</a></li>
+                <li><a data-scroll="#about" onclick="window.location='{{ url('about')}}'">About</a></li>
+                <li><a data-scroll="#skills" >Skills</a></li>
+                <li><a data-scroll="#contact" onclick="window.location='{{ url('contact')}}'">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+        </div>
+    </header>
         <div class="about-section" style="margin-top: 0" id="about">
         <div class="about-head">
             <h1 class="wow zoomIn">
@@ -63,4 +81,5 @@
         </div>
     </div>
     </body>
+    <script src="/js/app.js"></script>
 </html>

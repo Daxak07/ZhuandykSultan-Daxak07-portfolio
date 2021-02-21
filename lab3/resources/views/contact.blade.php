@@ -12,6 +12,25 @@
 </head>
 
 <body>
+   <header class="wow zoomIn" id="home">
+        <div class="logo">
+            <h1>DAXAK</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a data-scroll="#home1" onclick="window.location='{{ url('/')}}'">Home</a></li>
+                <li><a data-scroll="#about" onclick="window.location='{{ url('about')}}'">About</a></li>
+                <li><a onclick="window.location='{{ url('about')}}'">Skills</a></li>
+                <li><a data-scroll="#contact" onclick="window.location='{{ url('contact')}}'">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+        </div>
+    </header>
+
     <div class="contact-head wow zoomIn" id="contact">
         <h1>CONTACT</h1>
     </div>

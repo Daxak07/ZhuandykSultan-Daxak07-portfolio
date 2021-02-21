@@ -16,10 +16,10 @@
         </div>
         <nav class="navigation">
             <ul>
-                <li><a data-scroll="#home1">Home</a></li>
-                <li><a data-scroll="#about">About</a></li>
-                <li><a data-scroll="#skills">Skills</a></li>
-                <li><a data-scroll="#contact">Contact</a></li>
+                <li><a data-scroll="#home1" onclick="window.location='{{ url('/')}}'">Home</a></li>
+                <li><a data-scroll="#about" onclick="window.location='{{ url('about')}}'">About</a></li>
+                <li><a onclick="window.location='{{ url('about')}}'">Skills</a></li>
+                <li><a data-scroll="#contact" onclick="window.location='{{ url('contact')}}'">Contact</a></li>
             </ul>
         </nav>
         <div class="burger">
@@ -36,7 +36,7 @@
                 I'm <span>Daxak</span><br>
                 Web Developer
             </h1>
-            <button class="cta" data-scroll="#contact" onclick="redirect()">Email me</button>
+            <button class="cta" data-scroll="#contact" onclick="window.location='{{ url('contact')}}'">Email me</button>
         </div>
 
         <div class="header-main-img wow zoomIn" style="animation-delay: 900ms">
