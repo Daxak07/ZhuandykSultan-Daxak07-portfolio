@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group whichreate something great!
 |
 */
+Route::get('post/create', function () {
+	DB::table('posts')->insert([
+		'title' => 'Fish',
+		'body' => 'Tail'
+	]);
+});
+
+Route::get('post', function () {
+	$post = Post::find(1);
+	return $post;
+});
+
 
 Route::get('/', function () {
     return view('index');
@@ -34,15 +49,15 @@ Route::get('hello', function () {
 
 Route::redirect('salam', '/about');
 
-Route::get('/post/{id}', function ($id) {
-	return "id number is : " . $id;
-});
+// Route::get('/post/{id}', function ($id) {
+// 	return "id number is : " . $id;
+// });
 
 Route::get('/user/{name?}', function ($name=null) {
 	return $name;
 })->where('name','[a-zA-Z]+');
 
-Route::get('/post', 'App\Http\Controllers\PostsController@index');
+// Route::get('/post', 'App\Http\Controllers\PostsController@index');
 
 Route::get('maaa/{tel}', 'App\Http\Controllers\PostsController@reverse_number');
 
