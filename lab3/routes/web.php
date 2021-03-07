@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\Post;
 
+use App\Http\Controllers\BlogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +18,9 @@ use App\Models\Post;
 */
 Route::get('post/create', function () {
 	DB::table('posts')->insert([
-		'title' => 'Fish',
-		'body' => 'Tail'
+		'id' => 4,
+		'title' => 'Michael',
+		'body' => 'Jordan'
 	]);
 });
 
@@ -59,5 +62,6 @@ Route::get('/user/{name?}', function ($name=null) {
 
 // Route::get('/post', 'App\Http\Controllers\PostsController@index');
 
-Route::get('maaa/{tel}', 'App\Http\Controllers\PostsController@reverse_number');
+// Route::get('maaa/{tel}', 'App\Http\Controllers\PostsController@reverse_number');
 
+Route::get('blog', [BlogController::class, 'index']);
