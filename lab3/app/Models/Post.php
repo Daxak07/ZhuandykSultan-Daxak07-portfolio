@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected $table = "posts";
+    protected $fillable = ['title','body'];
 }

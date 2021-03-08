@@ -18,9 +18,8 @@ use App\Http\Controllers\BlogController;
 */
 Route::get('post/create', function () {
 	DB::table('posts')->insert([
-		'id' => 4,
-		'title' => 'Michael',
-		'body' => 'Jordan'
+		'title' => 'Scott',
+		'body' => 'Travis'
 	]);
 });
 
@@ -65,3 +64,8 @@ Route::get('/user/{name?}', function ($name=null) {
 // Route::get('maaa/{tel}', 'App\Http\Controllers\PostsController@reverse_number');
 
 Route::get('blog', [BlogController::class, 'index']);
+Route::get('blog/create', function() {
+	return view('blog.create');
+});
+
+Route::post('blog/create', [BlogController::class, 'store'])->name('add_blog');
