@@ -17,15 +17,15 @@ use App\Http\Controllers\BlogController;
 |
 */
 Route::get('post/create', function () {
-	DB::table('posts')->insert([
-		'title' => 'Scott',
-		'body' => 'Travis'
-	]);
+    DB::table('posts')->insert([
+        'title' => 'Scott',
+        'body' => 'Travis'
+    ]);
 });
 
 Route::get('post', function () {
-	$post = Post::find(1);
-	return $post;
+    $post = Post::find(1);
+    return $post;
 });
 
 
@@ -42,21 +42,21 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/example', function () {
-	return "Web programming back end";
+    return "Web programming back end";
 });
 
 Route::get('hello', function () {
-	return redirect('/contact');
+    return redirect('/contact');
 });
 
 Route::redirect('salam', '/about');
 
 // Route::get('/post/{id}', function ($id) {
-// 	return "id number is : " . $id;
+//     return "id number is : " . $id;
 // });
 
 Route::get('/user/{name?}', function ($name=null) {
-	return $name;
+    return $name;
 })->where('name','[a-zA-Z]+');
 
 // Route::get('/post', 'App\Http\Controllers\PostsController@index');
@@ -65,7 +65,9 @@ Route::get('/user/{name?}', function ($name=null) {
 
 Route::get('blog', [BlogController::class, 'index']);
 Route::get('blog/create', function() {
-	return view('blog.create');
+    return view('blog.create');
 });
 
 Route::post('blog/create', [BlogController::class, 'store'])->name('add_blog');
+
+Route::get('post/{id}', [BlogController::class, 'get_post']);

@@ -11,18 +11,27 @@ class BlogController extends Controller
     //
 
     public function index() {
-    	$posts = Post::all();
+        $posts = Post::all();
 
-    	return view('blog/index')->with(['posts' => $posts]);
+        return view('blog/index')->with(['posts' => $posts]);
     }
 
     public function store(Request $request) {
-    	// dd($request);
-    	Post::create([
-    		'title' => $request->title,
-    		'body' => $request->body
-    	]);
+        // dd($request);
+        Post::create([
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
 
-    	return back();
+        return back();
+    }
+
+    public function get_post($id) {
+        $post = Post::find($id);
+
+        if( $post == null) {
+            return response(404);
+        }
+        return view('blog.detail')->with(['post' => $post]);
     }
 }
