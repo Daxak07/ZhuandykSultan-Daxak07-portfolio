@@ -11,5 +11,5 @@ class Post extends Model
     public $timestamps = false;
 
     protected $table = "posts";
-    protected $fillable = ['title','body'];
+    protected $fillable = ['post_id','title','body'];
 }

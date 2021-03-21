@@ -19,23 +19,4 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_post_get_id_request()
-    {
-        $response = $this->get('/post/1');
-        $response->assertStatus(200);
-    }
-
-    public function test_get_unexisted_post()
-    {
-        $response = $this->get('/post/100000');
-
-        $response->assertStatus(200);
-    }
-
-    public function test_post_response()
-    {
-        $response = $this->get('/post/1');
-
-        $response->assertViewHas('post');
-    }
 }

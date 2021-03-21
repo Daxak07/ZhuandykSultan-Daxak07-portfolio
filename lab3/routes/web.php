@@ -18,8 +18,8 @@ use App\Http\Controllers\BlogController;
 */
 Route::get('post/create', function () {
     DB::table('posts')->insert([
-        'title' => 'Scott',
-        'body' => 'Travis'
+        'title' => 'Tincho',
+        'body' => 'Kadyr'
     ]);
 });
 
@@ -29,35 +29,35 @@ Route::get('post', function () {
 });
 
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('index');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+// Route::get('/about', function () {
+//     return view('about');
+// })->name('about');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+// Route::get('/contact', function () {
+//     return view('contact');
+// })->name('contact');
 
-Route::get('/example', function () {
-    return "Web programming back end";
-});
+// Route::get('/example', function () {
+//     return "Web programming back end";
+// });
 
-Route::get('hello', function () {
-    return redirect('/contact');
-});
+// Route::get('hello', function () {
+//     return redirect('/contact');
+// });
 
-Route::redirect('salam', '/about');
+// Route::redirect('salam', '/about');
 
 // Route::get('/post/{id}', function ($id) {
 //     return "id number is : " . $id;
 // });
 
-Route::get('/user/{name?}', function ($name=null) {
-    return $name;
-})->where('name','[a-zA-Z]+');
+// Route::get('/user/{name?}', function ($name=null) {
+//     return $name;
+// })->where('name','[a-zA-Z]+');
 
 // Route::get('/post', 'App\Http\Controllers\PostsController@index');
 
