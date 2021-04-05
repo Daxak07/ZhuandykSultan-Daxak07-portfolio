@@ -9,10 +9,6 @@ use App\Models\Post;
 class ApiController extends Controller
 {
 
-
-    //
-
-
     /*
 		This function return that all blogs rows
     */

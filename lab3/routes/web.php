@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\MailSendController;
+use GuzzleHttp\Psr7\UploadedFile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,17 +30,17 @@ Route::get('post', function () {
 });
 
 
-// Route::get('/', function () {
-//     return view('index');
-// })->name('index');
+Route::get('/', function () {
+    return view('index');
+})->name('index');
 
-// Route::get('/about', function () {
-//     return view('about');
-// })->name('about');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
-// Route::get('/contact', function () {
-//     return view('contact');
-// })->name('contact');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
 
 // Route::get('/example', function () {
 //     return "Web programming back end";
@@ -71,3 +72,7 @@ Route::get('blog/create', function() {
 Route::post('blog/create', [BlogController::class, 'store'])->name('add_blog');
 
 Route::get('post/{id}', [BlogController::class, 'get_post']);
+
+
+Route::get('/sendmail', [MailSendController::class, 'index']);
+Route::post('/sendmail/send', [MailSendController::class, 'send'])->name('add-user');
