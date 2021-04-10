@@ -17,6 +17,13 @@ use GuzzleHttp\Psr7\UploadedFile;
 | routes are loaded by the RouteServiceProvider within a group whichreate something great!
 |
 */
+
+Route::get('/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('main');
+});
+
+
 Route::get('post/create', function () {
     DB::table('posts')->insert([
         'title' => 'Tincho',
