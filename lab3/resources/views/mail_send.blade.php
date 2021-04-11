@@ -10,7 +10,7 @@
             display: block;
             width: 100%;
             max-width: 450px;
-            margin: 0 auto;
+            margin-left: 50px;
             padding-top: 50px;
         }
     </style>
@@ -21,35 +21,21 @@
         <form action="{{ route('add-user') }}" method="post" enctype="multipart/form-data">
             @csrf
 
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input name="name" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Enter name">
+            <input name="name" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Enter name" style="margin-bottom: 15px">
+
+            <input name="surname" type="text" class="form-control" aria-describedby="surnameHelp" placeholder="Enter surname" style="margin-bottom: 15px">
+
+            <input name="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" style="margin-bottom: 15px">
+             
+            <div class="custom-file" style="padding-bottom: 15px">
+                <?php
+                echo Form::open(array('url' => '/uploadfile', 'files' => 'true'));
+                echo Form::file('image');
+                Form::close();
+                ?>
             </div>
 
-            <div class="form-group">
-                <label for="surname">Surname</label>
-                <input name="surname" type="text" class="form-control" aria-describedby="surnameHelp" placeholder="Enter surname">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input name="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-
-            <div class="form-group">
-                <div class="custom-file">
-                    <?php
-                    echo Form::open(array('url' => '/uploadfile', 'files' => 'true'));
-                    echo Form::file('image');
-                    Form::close();
-                    ?>
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <input type="submit" name="send" value="Send" class="btn btn-success">
-            </div>
+            <input type="submit" name="send" value="Send" class="btn btn-danger">
         </form>
 </body>
 </html>

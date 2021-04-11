@@ -51,4 +51,10 @@ class MailSendController extends Controller
 
         return back();
     }
+
+    public function show()
+    {
+        $employees = Employee::all();
+        return view('show')->with('employees', $employees);
+    }
 }

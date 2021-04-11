@@ -18,10 +18,10 @@ use GuzzleHttp\Psr7\UploadedFile;
 |
 */
 
-Route::get('/{lang}', function ($lang) {
-    App::setlocale($lang);
-    return view('main');
-});
+// Route::get('/{lang}', function ($lang) {
+//     App::setlocale($lang);
+//     return view('main');
+// });
 
 
 Route::get('post/create', function () {
@@ -83,3 +83,4 @@ Route::get('post/{id}', [BlogController::class, 'get_post']);
 
 Route::get('/sendmail', [MailSendController::class, 'index']);
 Route::post('/sendmail/send', [MailSendController::class, 'send'])->name('add-user');
+Route::get('/sendmail/show', [MailSendController::class, 'show']);
